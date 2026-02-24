@@ -53,3 +53,16 @@ run(), eat() - methods of the class
    - Identity - name of the dog
    - State / Attribute - color, breed, age
    - Behavior - eat(), run()
+5. How to create an object ?
+   - new keyword
+   - new instance method
+   - clone() method
+   - deserialization
+   - factory methods
+6. Steps to create an object using the new keyword -
+   1. Declaration : it is declaring a variable name with an object type : Animal cow;
+   2. Instatiation and Initialization : cow = new Animal();
+   - Object initialization techniques :
+     1. by reference variable
+     2. by method
+     3. by constructor
