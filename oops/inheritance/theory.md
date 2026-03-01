@@ -26,7 +26,7 @@ Sparrow Is-A Bird : here Bird is the parent class and Sparrow is the Child class
 
 ### Why Multiple and Hybrid Inheritance is not possible in java ?
 
-Suppose there are 2 classes A and B and they have a single child C. (A,B -> C). Now if A and B contains same method then if I do objC.method() then which method will be called ? from the class A or class B ? The compiler confused. This is called Ambiguity (Daimond problem).
+Suppose there are 2 classes A and B and they have a single child C. (A,B -> C). Now if A and B contains same method then if I do objC.method() then which method will be called ? From the class A or class B ? The compiler confused. This is called Ambiguity (Diamond problem).
 
 ### Is all the things of the parent class is inherited to the child class ?
 
@@ -57,9 +57,23 @@ Object class
 #### 2. Has-A (Association)
 
 - not blood relation
+- if a class (Student) contains suppose 2 attributes : String name , int roll;
+- here we can say Student Has-A name adn Student Has-A roll.
+- you can achieve this directly or using the following option ...
 - you can access the methods and attributes of other class using the object of that class. No need to apply 'Extends'.
   This will prevent the tightly coupled condition.
 
 ##### 1. Aggregation
 
+Car Has-A music_player : here music_player is not mandatory to run the car. So this is **weak bonding**.
+
 ##### 2. Composition
+
+Car Has-A Engine : here Engine is important for the Car. So this is **strong bonding**.
+
+Suppose :
+**Car** -> **container object**
+**Car** has music_player. So, **music_player** -> **contained object.**
+or , if **Car** has **Engine**. So, **engine** -> **contained object**.
+
+Now, if **Container object** is **not present** but there will be chances of presence of the **contained object**, then this is called **Weak bonding (Aggregation)**. And, if there is no existence of the **contained object** if there is no **container object** then that is called **Strong bonding (Composition).**
