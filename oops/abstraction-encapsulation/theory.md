@@ -10,3 +10,15 @@ As in the car case, relevant parts like steering, gear, horn, accelerator, break
 | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | **1.** Abstraction is detail hiding (Implementation hiding)                                                     | **1.** Encapsulation is data hiding (Information hiding)                      |
 | **2.** Data abstraction deals with exposing the interface to the user and hiding the details of implementation. | **2.** Encapsulation groups together data and methods that act upon the data. |
+
+### How to achieve abstraction in Java ?
+
+1. Abstract class (0 - 100%)
+2. Interfaces (100%)
+
+### Abstract method
+
+A method without body (no implementation) is known as Abstract method.
+java'''
+abstract void start();
+'''
