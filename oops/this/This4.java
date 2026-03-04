@@ -3,7 +3,7 @@ class This4 {
     System.out.println("I am in m1 method");
   }
   void m2() {
-    m1(this);  // class instance this 
+    m1(this);  // this is an argument of a method 
   }
 
   public static void main(String[] args) {

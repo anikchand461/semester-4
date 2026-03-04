@@ -1,6 +1,6 @@
 ## this keyword
 
-this keyword refers to the current class instance variable.
+this keyword is a reference variable refers to the current class instance variable.
 
 ```java
 class test {
