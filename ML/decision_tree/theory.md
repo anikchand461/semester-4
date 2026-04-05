@@ -24,7 +24,7 @@ This chain of yes/no questions **is** a decision tree. ML uses the exact same lo
 
 ## 🏗️ Anatomy of a Decision Tree
 
-![Decision Tree Structure — Heart Attack Risk](tree.png)
+![Decision Tree Structure — Heart Attack Risk](img/tree.png)
 
 The diagram above shows a medical decision tree for predicting **heart attack risk** based on Age, Weight, and Smoking status.
 
