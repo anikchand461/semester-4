@@ -18,7 +18,7 @@ Machine Learning (ML) is a subset of Artificial Intelligence that enables system
 
 In **Supervised Learning**, the model is trained on a **labeled dataset** — meaning every input has a corresponding correct output. A "supervisor" guides the model by providing both the training data and the desired output.
 
-![Supervised Learning](img/supervised.jpg.webp)
+![Supervised Learning](/img/supervised.jpg.jpeg)
 
 ### How It Works
 
