@@ -1,79 +1,192 @@
-## Inheritance
+# Object-Oriented Programming
 
-- It is inheriting the properties of parent class into the child class.
-- Inheritance is the procedure by which one object acquires all the properties and behaviors of a parent object.
+## Inheritance & Class Relationships in Java
 
-### Is-A relationship :
+---
 
-Sparrow Is-A Bird : here Bird is the parent class and Sparrow is the Child class of Bird.
+## 1. Inheritance
 
-### Advantages :
+Inheritance is the mechanism by which one class (**child/subclass**) acquires all the properties and behaviors of another class (**parent/superclass**). It establishes an **Is-A** relationship between classes.
 
-- code reusability
-- it promotes runtime polymorphism by allowing method overriding.
+- Inheriting the properties of a parent class into the child class.
+- The child class inherits methods and fields defined in the parent class.
+- Promotes code reuse and supports runtime polymorphism.
 
-### Disadvantages :
+![Animal Class Hierarchy](img/animal_class.webp)
+_Figure 1: Animal Class Hierarchy — Dog, Cat, and Cow inherit from Animal_
 
-- the classes are tightly coupled in inheritance. If you do change in the parent class then that will affect the all child classes.
+---
 
-### Types of Inheritance :
+### Advantages
 
-1. Single (A -> B)
-2. Multi level (A -> B -> C)
-3. Hierarchical (A -> B, C)
-4. Multiple (A,B -> C) : not possible in Java
-5. Hybrid (A -> B,C -> D) : not possible in Java
+1. **Code Reusability** — child classes can use methods/fields of the parent without rewriting them.
+2. **Runtime Polymorphism** — allows method overriding so each subclass can provide its own behavior.
+3. **Cost Cutting** — reduces development effort by sharing common logic.
+4. **Reduced Redundancy** — no need to repeat the same code in multiple classes.
 
-### Why Multiple and Hybrid Inheritance is not possible in java ?
+### Disadvantages
 
-Suppose there are 2 classes A and B and they have a single child C. (A,B -> C). Now if A and B contains same method then if I do objC.method() then which method will be called ? From the class A or class B ? The compiler confused. This is called Ambiguity (Diamond problem).
+- **Tight Coupling** — child classes depend heavily on the parent class.
+- Any change in the parent class affects **all** child classes, potentially breaking them.
 
-### Is all the things of the parent class is inherited to the child class ?
+---
 
-No, the child class does not inherit all things of the parent class.
-The things that are not inherited :
+### What is NOT Inherited by the Child Class?
 
-1. Constructor
-2. private members
+1. **Constructors** — they are not inherited; each class has its own constructors.
+2. **Private members** — private fields and methods of the parent are not directly accessible in the child class.
 
-### Which is the parent class of all the classes in java ?
+> 💡 **Note:** The parent class of **ALL** classes in Java is the **`Object`** class.
 
-Object class
+---
 
-### Why we apply relationship between multiple classes ? Advantages :
+## 2. Types of Inheritance
 
-1. code reusability
-2. cost cutting
-3. Reduce Redundancy
+![Types of Inheritance](img/1740035836329.png)
+_Figure 2: Types of Inheritance in Java and OOP_
 
-### Types of Relationships b/w classes :
+| Type         | Notation     | Supported in Java |
+| ------------ | ------------ | :---------------: |
+| Single       | A → B        |        ✅         |
+| Multilevel   | A → B → C    |        ✅         |
+| Hierarchical | A → B, C     |        ✅         |
+| Multiple     | A, B → C     |        ❌         |
+| Hybrid       | A → B, C → D |        ❌         |
 
-#### 1. Is-A (Inheritance)
+### Why Multiple & Hybrid Inheritance are NOT Allowed in Java
 
-- Tightly coupled with 'Extends' keyword
-- blood relation
-- Simple, Multi level, Hierarchical, Multiple, Hybrid
+Consider two classes **A** and **B**, each having a method with the same name, and a third class **C** that inherits from both. When we call `objC.method()`, the compiler cannot determine which version to use — from A or from B.
 
-#### 2. Has-A (Association)
+This ambiguity is known as the **Diamond Problem**.
 
-- not blood relation
-- if a class (Student) contains suppose 2 attributes : String name , int roll;
-- here we can say Student Has-A name adn Student Has-A roll.
-- you can achieve this directly or using the following option ...
-- you can access the methods and attributes of other class using the object of that class. No need to apply 'Extends'.
-  This will prevent the tightly coupled condition.
+> ⚠️ Java solves this by **disallowing multiple class inheritance**. Interfaces can be used to achieve similar behavior without ambiguity.
 
-##### 1. Aggregation
+---
 
-Car Has-A music_player : here music_player is not mandatory to run the car. So this is **weak bonding**.
+## 3. Is-A Relationship (Inheritance)
 
-##### 2. Composition
+The **Is-A** relationship is established using the `extends` keyword in Java. It represents a parent-child (**blood relation**) between classes.
 
-Car Has-A Engine : here Engine is important for the Car. So this is **strong bonding**.
+```
+       Bird          ← Parent Class
+         ↑
+      extends
+         |
+      Sparrow        ← Child Class
+```
 
-Suppose :
-**Car** -> **container object**
-**Car** has music_player. So, **music_player** -> **contained object.**
-or , if **Car** has **Engine**. So, **engine** -> **contained object**.
+- **Keyword:** `extends`
+- Tightly coupled relationship
+- Supports: Single, Multilevel, Hierarchical, Multiple, and Hybrid inheritance
 
-Now, if **Container object** is **not present** but there will be chances of presence of the **contained object**, then this is called **Weak bonding (Aggregation)**. And, if there is no existence of the **contained object** if there is no **container object** then that is called **Strong bonding (Composition).**
+**Example:**
+
+```java
+class Bird {
+    void fly() {
+        System.out.println("Bird is flying");
+    }
+}
+
+class Sparrow extends Bird {  // Sparrow Is-A Bird
+    void sing() {
+        System.out.println("Sparrow is singing");
+    }
+}
+```
+
+---
+
+## 4. Has-A Relationship (Association)
+
+The **Has-A** relationship is a **non-blood** relationship between classes. Instead of using `extends`, one class holds a **reference (object)** of another class.
+
+- **No `extends` keyword** required.
+- Access methods/attributes via object reference.
+- **Prevents tightly coupled code.**
+- Example: `Student` Has-A `name`, `Student` Has-A `roll`
+
+### Types of Has-A Relationship
+
+#### 4.1 Aggregation — Weak Bonding ◇
+
+The contained object **can exist independently** of the container object.
+
+```
+Car ◇────── MusicPlayer
+```
+
+- **Car** Has-A **music_player** — the music player is not essential for the car to run.
+- If the `Car` (container) is destroyed, the `MusicPlayer` (contained) can **still exist**.
+- Represented by a **hollow diamond** in UML diagrams.
+
+```java
+class MusicPlayer {
+    void play() { System.out.println("Playing music"); }
+}
+
+class Car {
+    MusicPlayer musicPlayer;  // Aggregation — weak bonding
+
+    Car(MusicPlayer mp) {
+        this.musicPlayer = mp;
+    }
+}
+```
+
+#### 4.2 Composition — Strong Bonding ◆
+
+The contained object **cannot exist without** the container object.
+
+```
+Car ◆────── Engine
+```
+
+- **Car** Has-A **Engine** — the engine makes no sense without the car context.
+- If the `Car` (container) is destroyed, the `Engine` (contained) also **ceases to exist**.
+- Represented by a **filled diamond** in UML diagrams.
+
+```java
+class Car {
+    Engine engine;  // Composition — strong bonding
+
+    Car() {
+        this.engine = new Engine();  // Engine created inside Car
+    }
+}
+
+class Engine {
+    void start() { System.out.println("Engine started"); }
+}
+```
+
+---
+
+## 5. Quick Reference Summary
+
+| Relationship           | Keyword          | Coupling         | Example                 |
+| ---------------------- | ---------------- | ---------------- | ----------------------- |
+| **Is-A** (Inheritance) | `extends`        | Tightly Coupled  | `Sparrow extends Bird`  |
+| **Has-A** Aggregation  | Object Reference | Weakly Coupled   | `Car` has `MusicPlayer` |
+| **Has-A** Composition  | Object Reference | Strongly Coupled | `Car` has `Engine`      |
+
+---
+
+## 6. Types of Relationships Between Classes
+
+### 1. Is-A (Inheritance)
+
+- Tightly coupled with `extends` keyword
+- Blood relation
+- Types: Simple, Multilevel, Hierarchical, Multiple, Hybrid
+
+### 2. Has-A (Association)
+
+- Not a blood relation
+- Access the methods and attributes of another class using its object — no need for `extends`
+- Prevents tight coupling
+
+| Sub-type        | Bonding  | Container Destroyed →                |
+| --------------- | -------- | ------------------------------------ |
+| **Aggregation** | Weak ◇   | Contained object **can** still exist |
+| **Composition** | Strong ◆ | Contained object **cannot** exist    |
