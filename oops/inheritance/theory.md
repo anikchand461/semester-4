@@ -174,6 +174,8 @@ class Engine {
 
 ## 6. Types of Relationships Between Classes
 
+![Types of Relationships](img/isa-hasa.png)
+
 ### 1. Is-A (Inheritance)
 
 - Tightly coupled with `extends` keyword
