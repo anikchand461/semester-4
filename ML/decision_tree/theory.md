@@ -1,4 +1,4 @@
-# 🌳 Decision Trees — ML Basics
+# 🌳 Decision Trees
 
 A **Decision Tree** is a supervised machine learning algorithm that makes decisions by splitting data into branches based on feature conditions — just like a flowchart. It's one of the most intuitive and interpretable ML models.
 

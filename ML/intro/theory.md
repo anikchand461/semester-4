@@ -1,4 +1,4 @@
-# 🤖 Machine Learning Basics
+# 🤖 Machine Learning
 
 Machine Learning (ML) is a subset of Artificial Intelligence that enables systems to **learn from data** and improve their performance over time — without being explicitly programmed.
 

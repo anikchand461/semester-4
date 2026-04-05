@@ -1,4 +1,4 @@
-# K-Nearest Neighbors (KNN) — Complete Guide
+# K-Nearest Neighbors (KNN)
 
 > **A simple, powerful, non-parametric algorithm that classifies a data point based on the majority class of its _k_ closest neighbors.**
 
