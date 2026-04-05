@@ -1,6 +1,4 @@
-# Object-Oriented Programming
-
-## Inheritance & Class Relationships in Java
+# Inheritance & Class Relationships in Java
 
 ---
 
