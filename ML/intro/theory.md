@@ -146,5 +146,3 @@ print(f"Accuracy: {accuracy_score(y_test, predictions):.2f}")
 ```
 
 ---
-
-> 📚 **Next Steps:** Explore Reinforcement Learning, Deep Learning, and Neural Networks to go deeper into the world of AIf
