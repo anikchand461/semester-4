@@ -6,7 +6,7 @@
 
 ## How KNN Works
 
-![KNN Overview](1775394885161_k_nearest_neighbors.webp)
+![KNN Overview](neighbors.webp)
 
 KNN makes no assumptions about the underlying data distribution. To classify a new point **Pₜ**, it:
 
@@ -18,7 +18,7 @@ KNN makes no assumptions about the underlying data distribution. To classify a n
 
 ## Choosing K — The Inner & Outer Ring
 
-![KNN with k=3 and k=6](1775394885161_1_HmuYl9VQX9pzCL4KLmILrg.png)
+![KNN with k=3 and k=6](k.png)
 
 The diagram above shows the **same red point** classified differently depending on k:
 
