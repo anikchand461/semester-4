@@ -54,9 +54,6 @@ _Figure 2: Complete Java Execution Flow — Compile Time + Runtime (JVM)_
 
 ## 2. JDK, JRE & JVM
 
-![JDK JRE JVM](img/1775387839689_flow.png)
-_Figure 3: JVM is inside JRE, JRE is inside JDK_
-
 ```
 ┌──────────────────────────────┐
 │            JDK               │
