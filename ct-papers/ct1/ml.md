@@ -24,7 +24,10 @@ b) How is Supervised Learning different from Unsupervised learning techniques?
 ### 2.
 
 a) Why does logistic regression come under the category of classification problems?  
-b) How is logistic regression different from linear regression?  
+b) How is logistic regression different from linear regression?
+
+or
+
 c) What do nodes and edges signify in a decision tree?  
 d) Write down limitations of decision tree.
 
